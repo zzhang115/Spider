@@ -6,11 +6,16 @@ webdata = requests.get(url)
 # print(webdata.text)
 soup = BeautifulSoup(webdata.text, 'lxml')
 # print(soup)
-titles = soup.select('.top_attractions > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a')#[target="_blank"]')
-for t in titles:
-    print(t.get_text())
-# titles = soup.select('.top_attractions > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)') > div:nth-of-type(1) > a')
-# titles = soup.select('.top_attractions > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > a:nth-child(1)')
-# titles = soup.select('div.property_title > a[target="_blank"]')
+# titles = soup.select('.top_attractions > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a.poiTitle')#[target="_blank"]')
+titles = soup.select('a.poiTitle')#[target="_blank"]')
+# images = soup.select('.top_attractions > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)')
+images = soup.select('img[width="200"]')# set image width can eliminate other images we dont need
 print(titles)
-# .top_attractions > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > a:nth-child(1)
+print(images)
+
+for title in titles:
+    print(title.get_text())
+for image in images:
+    print(image.get('src'))
+# titles = soup.select('.top_attractions > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)') > div:nth-of-type(1) > a')
+# .top_attractions > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)
