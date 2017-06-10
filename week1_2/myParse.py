@@ -21,24 +21,30 @@ with open(path, 'r') as f:
     # allMetadata = Soup.select('body > div.main-content > ul > li:nth-of-type(1) > div.article-info > p.meta-info > span')
     allTitle = Soup.select('body > div.main-content > ul > li > div.article-info > h3 > a')
     allImage = Soup.select('body > div.main-content > ul > li > img')
-    allRate= Soup.select('body > div.main-content > ul > li > div.rate > span')
+    allRate = Soup.select('body > div.main-content > ul > li > div.rate > span')
     allDescription = Soup.select('body > div.main-content > ul > li > div.article-info > p.description')
     allMetadata = Soup.select('body > div.main-content > ul > li > div.article-info > p.meta-info')
 
-    # print("allTitle:", allTitle)
+    # print("allTitle:", len(allTitle))
     # print("meta:", allMetadata)
+    # print("allDescription:", len(allDescription))
 for title, image, rate, description, metadata in zip(allTitle, allImage, allRate, allDescription, allMetadata):
-        info = {
-            "title" : title.get_text(),
-            "image" : image.get('src'), #src is one attribute in image selector
-            "rate" : rate.get_text(),
-            "description" : description.get_text(),
-            "cate" : list(metadata.stripped_strings),
-        }
-        infoList.append(info)
+    print(metadata.get_text())
+    print("stipped:", metadata.stripped_strings)
+    info = {
+        "title" : title.get_text(),
+        "image" : image.get('src'), #src is one attribute in image selector
+        "rate" : rate.get_text(),
+        "description" : description.get_text(),
+        "cate" : list(metadata.stripped_strings), #metadata is a list contains related information of cate, stripped_strings from bs4, it is used to
+                                                  #united all string in one metadata to an object
+    }
+    infoList.append(info)
+# print(infoList[0]["title"])
+print(len(infoList[0]["cate"]))
 for information in infoList:
    if float(information['rate']) >= 4:
-       print(information['title'])
+       print(information)
 
     # print(title.get_text())
     # print(image.get('src'))
