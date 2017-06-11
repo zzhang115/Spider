@@ -26,7 +26,7 @@ with open(path, 'r') as f:
     allMetadata = Soup.select('body > div.main-content > ul > li > div.article-info > p.meta-info')
 
     # print("allTitle:", len(allTitle))
-    # print("meta:", allMetadata)
+    print("meta:", allMetadata)
     # print("allDescription:", len(allDescription))
 for title, image, rate, description, metadata in zip(allTitle, allImage, allRate, allDescription, allMetadata):
     print(metadata.get_text())

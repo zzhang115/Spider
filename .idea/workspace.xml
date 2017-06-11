@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3f09675-f4ec-489e-a00c-5c688297d978" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/week1_2/myParse.py" afterPath="$PROJECT_DIR$/week1_2/myParse.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/week1_3/3_Trip_Advisor.py" afterPath="$PROJECT_DIR$/week1_3/3_Trip_Advisor.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/week1_3/myTripAdvisor.py" afterPath="$PROJECT_DIR$/week1_3/myTripAdvisor.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,8 +15,8 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Spider$myWebParse.coverage" NAME="myWebParse Coverage Results" MODIFIED="1496985201927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week1_2/web" />
-    <SUITE FILE_PATH="coverage/Spider$myTripAdvisor.coverage" NAME="myTripAdvisor Coverage Results" MODIFIED="1497157279706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week1_3" />
-    <SUITE FILE_PATH="coverage/Spider$myParse.coverage" NAME="myParse Coverage Results" MODIFIED="1497069798790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week1_2" />
+    <SUITE FILE_PATH="coverage/Spider$myTripAdvisor.coverage" NAME="myTripAdvisor Coverage Results" MODIFIED="1497161689490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week1_3" />
+    <SUITE FILE_PATH="coverage/Spider$myParse.coverage" NAME="myParse Coverage Results" MODIFIED="1497157529292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week1_2" />
     <SUITE FILE_PATH="coverage/Spider$3_Trip_Advisor.coverage" NAME="3_Trip_Advisor Coverage Results" MODIFIED="1497073573390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week1_3" />
     <SUITE FILE_PATH="coverage/Spider$2_web_parse.coverage" NAME="2_web_parse Coverage Results" MODIFIED="1496988836965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week1_2" />
   </component>
@@ -23,14 +25,14 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.43041238">
+    <splitter split-orientation="horizontal" split-proportion="0.26537785">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="3_Trip_Advisor.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/week1_3/3_Trip_Advisor.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-238">
-                  <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+                <state relative-caret-position="60">
+                  <caret line="4" column="54" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="54" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
@@ -54,14 +56,36 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="myTripAdvisor.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/week1_3/myTripAdvisor.py">
+          <file leaf-file-name="myParse.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/week1_2/myParse.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="235">
-                  <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+                <state relative-caret-position="19">
+                  <caret line="15" column="67" lean-forward="false" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="myTripAdvisor.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/week1_3/myTripAdvisor.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="230">
+                  <caret line="35" column="54" lean-forward="true" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
+                  <folding>
+                    <element signature="e#0#29#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="保存清单 - TripAdvisor.html" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/Desktop/保存清单 - TripAdvisor.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1080">
+                  <caret line="4" column="174" lean-forward="false" selection-start-line="4" selection-start-column="174" selection-end-line="4" selection-end-column="174" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -80,6 +104,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>-child</find>
+      <find>Oculus</find>
     </findStrings>
     <replaceStrings>
       <replace>-of-type</replace>
@@ -93,10 +118,11 @@
       <list>
         <option value="$PROJECT_DIR$/week1_2/web/myWebParse.py" />
         <option value="$PROJECT_DIR$/week1_2/myWebParse.py" />
-        <option value="$PROJECT_DIR$/week1_2/myParse.py" />
         <option value="$PROJECT_DIR$/spiderExample/spider00.py" />
+        <option value="$PROJECT_DIR$/week1_2/myParse.py" />
         <option value="$PROJECT_DIR$/week1_3/3_Trip_Advisor.py" />
         <option value="$PROJECT_DIR$/week1_3/myTripAdvisor.py" />
+        <option value="$USER_HOME$/Desktop/保存清单 - TripAdvisor.html" />
       </list>
     </option>
   </component>
@@ -523,8 +549,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.myTripAdvisor" />
-        <item index="1" class="java.lang.String" itemvalue="Python.3_Trip_Advisor" />
-        <item index="2" class="java.lang.String" itemvalue="Python.myParse" />
+        <item index="1" class="java.lang.String" itemvalue="Python.myParse" />
+        <item index="2" class="java.lang.String" itemvalue="Python.3_Trip_Advisor" />
         <item index="3" class="java.lang.String" itemvalue="Python.2_web_parse" />
         <item index="4" class="java.lang.String" itemvalue="Python.myWebParse" />
       </list>
@@ -545,15 +571,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="268" y="1104" width="1301" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.119521916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09322709" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.628483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26625386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1996904" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -789,8 +815,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/week1_2/myParse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="42" lean-forward="false" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+        <state relative-caret-position="19">
+          <caret line="15" column="67" lean-forward="false" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
@@ -799,18 +825,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/week1_3/3_Trip_Advisor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        <state relative-caret-position="60">
+          <caret line="4" column="54" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="54" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/保存清单 - TripAdvisor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1080">
+          <caret line="4" column="174" lean-forward="false" selection-start-line="4" selection-start-column="174" selection-end-line="4" selection-end-column="174" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/week1_3/myTripAdvisor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        <state relative-caret-position="230">
+          <caret line="35" column="54" lean-forward="true" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>

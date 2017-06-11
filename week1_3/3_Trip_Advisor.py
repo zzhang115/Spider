@@ -19,37 +19,36 @@ def get_attractions(url,data=None):
     titles    = soup.select('div.property_title > a[target="_blank"]')
     imgs      = soup.select('img[width="160"]')
     cates     = soup.select('div.p13n_reasoning_v2')
-    print(titles)
 
-#     if data == None:
-#         for title,img,cate in zip(titles,imgs,cates):
-#             data = {
-#                 'title'  :title.get_text(),
-#                 'img'    :img.get('src'),
-#                 'cate'   :list(cate.stripped_strings),
-#                 }
-#         print(data)
-#
-#
-# def get_favs(url,data=None):
-#     wb_data = requests.get(url,headers=headers)
-#     soup      = BeautifulSoup(wb_data.text,'lxml')
-#     titles    = soup.select('a.location-name')
-#     imgs      = soup.select('div.photo > div.sizedThumb > img.photo_image')
-#     metas = soup.select('span.format_address')
-#
-#     if data == None:
-#         for title,img,meta in zip(titles,imgs,metas):
-#             data = {
-#                 'title'  :title.get_text(),
-#                 'img'    :img.get('src'),
-#                 'meta'   :list(meta.stripped_strings)
-#             }
-#             print(data)
-#
-# for single_url in urls:
-#     get_attractions(single_url)
-get_attractions(url)
+    if data == None:
+        for title,img,cate in zip(titles,imgs,cates):
+            data = {
+                'title'  :title.get_text(),
+                'img'    :img.get('src'),
+                'cate'   :list(cate.stripped_strings),
+                }
+        print(data)
+
+
+def get_favs(url,data=None):
+    wb_data = requests.get(url,headers=headers)
+    soup      = BeautifulSoup(wb_data.text,'lxml')
+    titles    = soup.select('a.location-name')
+    imgs      = soup.select('div.photo > div.sizedThumb > img.photo_image')
+    metas = soup.select('span.format_address')
+
+    if data == None:
+        for title,img,meta in zip(titles,imgs,metas):
+            data = {
+                'title'  :title.get_text(),
+                'img'    :img.get('src'),
+                'meta'   :list(meta.stripped_strings)
+            }
+            print(data)
+
+for single_url in urls:
+    get_attractions(single_url)
+
 
 # from mobile web site
 '''
