@@ -10,12 +10,16 @@ soup = BeautifulSoup(webdata.text, 'lxml')
 titles = soup.select('a.poiTitle')#[target="_blank"]')
 # images = soup.select('.top_attractions > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)')
 images = soup.select('img[width="200"]')# set image width can eliminate other images we dont need
-print(titles)
+cates = soup.select('div.detail > div:nth-of-type(3)')# > div:nth-of-type(1)')# > div:nth-of-type(1) > div:nth-of-type(2) > div')
+# print(titles)
 print(images)
+print(cates)
 
-for title in titles:
-    print(title.get_text())
-for image in images:
-    print(image.get('src'))
+# for title in titles:
+#     print(title.get_text())
+# for image in images:
+#     print(image.get('src'))
+for cate in cates:
+    print(cate.get_text())
 # titles = soup.select('.top_attractions > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)') > div:nth-of-type(1) > a')
 # .top_attractions > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)
