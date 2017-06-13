@@ -14,23 +14,10 @@ def main():
     result = session_requests.get(LOGIN_URL)
     # print(result.text)
     tree = html.fromstring(result.text)
-  #   content = '''<form id="openid-form" class="aui login-form"
-  #     data-module="registration/openid-form"
-  #     action="/social/openid/redirect/" method="POST">
-  # <input type='hidden' name='csrfmiddlewaretoken' value='7yBYH0dugqHSAdFn0dVpSWnrckrIhohM' />
-  #   '''
-    content = '''<input type='hidden' name='csrfmiddlewaretoken' value='qG81yiYJtOU5h56IR5XD0YklufpkqRuL' />'''
-    # print(result.text)
-    f = open('scrapy.html', 'w')
-    f.write(result.text)
-    f.close()
-
-    a = open('scrapy.html', 'r')
-    print(a.read())
-    pattern = re.compile(r'.+?name=\'csrfmiddlewaretoken\'.*value=\'(.+?)\'')
-    m = pattern.match(a.read())
+    pattern = re.compile('.+([\r|\n]+.+)+.+?name=\'csrfmiddlewaretoken\'.*value=\'(.+?)\'')
+    m = pattern.match(result.text)
     if m:
-        print("***********", m.group(0))
+        print(m.group(2))
 
     authenticity_token = list(set(tree.xpath("//input[@name='csrfmiddlewaretoken']/@value")))[0]
     # authenticity_token = list(set(tree.xpath("//input[@type='hidden']/@name")))[0]
