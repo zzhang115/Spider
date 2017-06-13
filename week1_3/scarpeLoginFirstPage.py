@@ -19,18 +19,22 @@ def main():
   #     action="/social/openid/redirect/" method="POST">
   # <input type='hidden' name='csrfmiddlewaretoken' value='7yBYH0dugqHSAdFn0dVpSWnrckrIhohM' />
   #   '''
-    content = '''
-    <input type='hidden' name='csrfmiddlewaretoken' value='7yBYH0dugqHSAdFn0dVpSWnrckrIhohM' />
-    '''
+    content = '''<input type='hidden' name='csrfmiddlewaretoken' value='qG81yiYJtOU5h56IR5XD0YklufpkqRuL' />'''
     # print(result.text)
-    pattern = re.compile(r'[\r|\n].+csrfmiddlewaretoken.+')
-    m = pattern.match(content)
+    f = open('scrapy.html', 'w')
+    f.write(result.text)
+    f.close()
+
+    a = open('scrapy.html', 'r')
+    print(a.read())
+    pattern = re.compile(r'.+?name=\'csrfmiddlewaretoken\'.*value=\'(.+?)\'')
+    m = pattern.match(a.read())
     if m:
-        print(m.group(0))
+        print("***********", m.group(0))
 
     authenticity_token = list(set(tree.xpath("//input[@name='csrfmiddlewaretoken']/@value")))[0]
     # authenticity_token = list(set(tree.xpath("//input[@type='hidden']/@name")))[0]
-    print("authenticity_token:", authenticity_token)
+    # print("authenticity_token:", authenticity_token)
     #
     # Create payload
     payload = {
