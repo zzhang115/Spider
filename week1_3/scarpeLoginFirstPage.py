@@ -3,7 +3,7 @@ from lxml import html
 
 USERNAME = "blueghost98@sina.cn"
 PASSWORD = "23860423"
-
+authenticity_token = ""
 LOGIN_URL = "https://bitbucket.org/account/signin/?next=/"
 URL = "https://bitbucket.org/dashboard/projects"
 
@@ -17,12 +17,11 @@ def main():
     pattern = re.compile('.+([\r|\n]+.+)+.+?name=\'csrfmiddlewaretoken\'.*value=\'(.+?)\'')
     m = pattern.match(result.text)
     if m:
-        print(m.group(2))
-
-    authenticity_token = list(set(tree.xpath("//input[@name='csrfmiddlewaretoken']/@value")))[0]
+        authenticity_token = m.group(2)
+    # authenticity_token = list(set(tree.xpath("//input[@name='csrfmiddlewaretoken']/@value")))[0]
     # authenticity_token = list(set(tree.xpath("//input[@type='hidden']/@name")))[0]
     # print("authenticity_token:", authenticity_token)
-    #
+
     # Create payload
     payload = {
         "username": USERNAME,
@@ -31,10 +30,10 @@ def main():
     }
 
     # Perform login
-    # result = session_requests.post(LOGIN_URL, data = payload, headers = dict(referer = LOGIN_URL))
+    result = session_requests.post(LOGIN_URL, data = payload, headers = dict(referer = LOGIN_URL))
     # # Scrape url
-    # result = session_requests.get(URL, headers = dict(referer = URL))
-    # print(result.text)
+    result = session_requests.get(URL, headers = dict(referer = URL))
+    print(result.text)
     # tree = html.fromstring(result.content)
     # bucket_names = tree.xpath("//div[@class='repo-list--repo']/a/text()")
     #
