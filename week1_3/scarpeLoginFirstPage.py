@@ -14,19 +14,16 @@ def main():
     result = session_requests.get(LOGIN_URL)
     # print(result.text)
     tree = html.fromstring(result.text)
+  #   content = '''<form id="openid-form" class="aui login-form"
+  #     data-module="registration/openid-form"
+  #     action="/social/openid/redirect/" method="POST">
+  # <input type='hidden' name='csrfmiddlewaretoken' value='7yBYH0dugqHSAdFn0dVpSWnrckrIhohM' />
+  #   '''
     content = '''
-    name="csrfmiddlewaretoken"
-        type="hidden"
-        value="tndlHzDI81PlzEeBX3MrBz8iFRCAre5M" />
+    <input type='hidden' name='csrfmiddlewaretoken' value='7yBYH0dugqHSAdFn0dVpSWnrckrIhohM' />
     '''
-    # pattern = re.compile(r'.+name=["]csrfmiddlewaretoken["].+value=["](.+)["].+')
-    # pattern = re.compile(r'.+hello')
-    # m = pattern.match("abchelloworld")
-    # if m:
-    #     print(m.group(0))
-
-    pattern = re.compile(r'"\n".*name=.csrfmiddlewaretoken')
     # print(result.text)
+    pattern = re.compile(r'[\r|\n].+csrfmiddlewaretoken.+')
     m = pattern.match(content)
     if m:
         print(m.group(0))
