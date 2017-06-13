@@ -1,4 +1,4 @@
-import requests
+import requests, re
 from lxml import html
 
 USERNAME = "blueghost98@sina.cn"
@@ -14,7 +14,26 @@ def main():
     result = session_requests.get(LOGIN_URL)
     # print(result.text)
     tree = html.fromstring(result.text)
+    content = '''
+    name="csrfmiddlewaretoken"
+        type="hidden"
+        value="tndlHzDI81PlzEeBX3MrBz8iFRCAre5M" />
+    '''
+    # pattern = re.compile(r'.+name=["]csrfmiddlewaretoken["].+value=["](.+)["].+')
+    # pattern = re.compile(r'.+hello')
+    # m = pattern.match("abchelloworld")
+    # if m:
+    #     print(m.group(0))
+
+    pattern = re.compile(r'"\n".*name=.csrfmiddlewaretoken')
+    # print(result.text)
+    m = pattern.match(content)
+    if m:
+        print(m.group(0))
+
     authenticity_token = list(set(tree.xpath("//input[@name='csrfmiddlewaretoken']/@value")))[0]
+    # authenticity_token = list(set(tree.xpath("//input[@type='hidden']/@name")))[0]
+    print("authenticity_token:", authenticity_token)
     #
     # Create payload
     payload = {
@@ -24,10 +43,10 @@ def main():
     }
 
     # Perform login
-    result = session_requests.post(LOGIN_URL, data = payload, headers = dict(referer = LOGIN_URL))
+    # result = session_requests.post(LOGIN_URL, data = payload, headers = dict(referer = LOGIN_URL))
     # # Scrape url
-    result = session_requests.get(URL, headers = dict(referer = URL))
-    print(result.text)
+    # result = session_requests.get(URL, headers = dict(referer = URL))
+    # print(result.text)
     # tree = html.fromstring(result.content)
     # bucket_names = tree.xpath("//div[@class='repo-list--repo']/a/text()")
     #
