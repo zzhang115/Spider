@@ -21,6 +21,13 @@ def main():
                 CSRFTOKEN = m.group(1)
                 print(CSRFTOKEN)
                 break
-
+    payload = {
+        "email" : EMAIL,"Invalid Checkin date: Please enter a valid checkin and checkout dates,entered date is already passed"
+        "password" : PASSWORD,
+        "csrfToken" : CSRFTOKEN
+    }
+    result = session.post(LOGIN_URL, data = payload, headers = dict(referer = LOGIN_URL))
+    result = session.get(URL, headers = dict(referer = URL))
+    print(result.text)
 if __name__ == '__main__':
     main()

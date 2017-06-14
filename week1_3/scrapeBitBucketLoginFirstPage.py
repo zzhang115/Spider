@@ -34,7 +34,7 @@ def main():
     result = session_requests.post(LOGIN_URL, data = payload, headers = dict(referer = LOGIN_URL))
     # # Scrape url
     result = session_requests.get(URL, headers = dict(referer = URL))
-    # print(result.text)
+    print(result.text)
     # tree = html.fromstring(result.content)
     # bucket_names = tree.xpath("//div[@class='repo-list--repo']/a/text()")
     #
