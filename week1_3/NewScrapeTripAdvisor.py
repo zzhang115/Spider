@@ -21,8 +21,7 @@ def parse(locality, checkin_date, checkout_date, sort):
     api_response = requests.get(geo_url).json()
     # getting the TA url for th equery from the autocomplete response
     url_from_autocomplete = "http://www.tripadvisor.com" + api_response['results'][0]['url']
-    print
-    'URL found %s' % url_from_autocomplete
+    print('URL found %s' % url_from_autocomplete)
     geo = api_response['results'][0]['value']
     # Formating date for writing to file
 
