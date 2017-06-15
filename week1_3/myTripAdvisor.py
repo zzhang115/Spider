@@ -4,34 +4,33 @@ import requests, time
 data = []
 # url = 'https://cn.tripadvisor.com/Attractions-g60763-Activities-New_York_City_New_York.html'
 urls = ['https://cn.tripadvisor.com/Attractions-g60763-Activities-oa{}-New_York_City_New_York.html#ATTRACTION_LIST'.format(str(i)) for i in range(0, 1110, 30)]
-
+i = 0
 def getContentFromSingleURL(url):
-  webdata = requests.get(url)
-  soup = BeautifulSoup(webdata.text, 'lxml')
-  # print(soup.text)
-  titles = soup.select('div.listing_info > div.listing_title')#[target="_blank"]')
-  images = soup.select('div.attraction_clarity_cell > div > div > div.photo_booking.non_generic > a.photo_link > img')
-  cates = soup.select('div.attraction_clarity_cell > div > div > div.listing_info > div.tag_line > div > a > span')# > div:nth-of-type(1)')# > div:nth-of-type(1) > div:nth-of-type(2) > div')
-  # print(titles)
-  # print(images)
-  # print(cates)
-  # for title in titles:
-  #     print(title.get_text())
-  # for image in images:
-  #     print(image.get('src'))
-  # for cate in cates:
-  #     print(cate.get_text())
-  for title, image, cate in zip(titles, images, cates):
-      info = {
+    webdata = requests.get(url)
+    soup = BeautifulSoup(webdata.text, 'lxml')
+    # print(soup.text)
+    titles = soup.select('div.listing_info > div.listing_title')#[target="_blank"]')
+    images = soup.select('div.attraction_clarity_cell > div > div > div.photo_booking.non_generic > a.photo_link > img')
+    cates = soup.select('div.attraction_clarity_cell > div > div > div.listing_info > div.tag_line > div > a > span')# > div:nth-of-type(1)')# > div:nth-of-type(1) > div:nth-of-type(2) > div')
+    # print(titles)
+    # print(images)
+    # print(cates)
+    # for title in titles:
+    #     print(title.get_text())
+    # for image in images:
+    #     print(image.get('src'))
+    # for cate in cates:
+    #     print(cate.get_text())
+    for title, image, cate in zip(titles, images, cates):
+        info = {
           "title" : title.get_text().replace('\n', ''),
           "image" : image.get('src'),
           "cate" : cate.get_text(),
-      }
-      data.append(info)
-
-  for d in data:
-      print('title:%s image:%s cate:%s' %(d.get('title'), d.get('image'), d.get('cate')))
-  time.sleep(2)
+        }
+        data.append(info)
+    for d in data:
+        print('title:%s image:%s cate:%s' %(d.get('title'), d.get('image'), d.get('cate')))
+    time.sleep(2)
   # url_save = 'https://cn.tripadvisor.com/Saves/37685322'
   # url_save = 'https://cn.tripadvisor.com/Saves/63376875'
   # headers = {
@@ -44,5 +43,6 @@ def getContentFromSingleURL(url):
   # print(soup)
 # getContentFromSingleURL('https://cn.tripadvisor.com/Attractions-g60763-Activities-oa30-New_York_City_New_York.html#ATTRACTION_LIST')
 for single_url in urls:
-  print(single_url)
-  getContentFromSingleURL(single_url)
+    print('%dth page: %s' %(i, single_url))
+    getContentFromSingleURL(single_url)
+    i = i + 1
