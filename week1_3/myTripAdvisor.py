@@ -3,7 +3,6 @@ from fake_useragent import UserAgent
 import requests, time
 
 data = []
-# url = 'https://cn.tripadvisor.com/Attractions-g60763-Activities-New_York_City_New_York.html'
 urls = ['https://cn.tripadvisor.com/Attractions-g60763-Activities-oa{}-New_York_City_New_York.html#ATTRACTION_LIST'.format(str(i)) for i in range(0, 1110, 30)]
 i = 0
 def getContentFromSingleURL(url):
@@ -46,7 +45,7 @@ def getImageFakeAsIphone(url):
     webdata = requests.get(url, headers = headers)
     soup = BeautifulSoup(webdata.text, 'lxml')
     # mobile phone parse source
-    images = soup.select('div.missing.lazyMiss')#('div.thumb.thumbLLR.soThumb')
+    images = soup.select('div.missing.lazyMiss')#('div.thumb.thumbLLR.soThumb') use '.' replace space
     # for image in images:
     #     print(image.get('data-thumburl'))
     return images

@@ -33,4 +33,7 @@ def getContentFromSingleURL(url):
     for image in images:
         print(image.get('src'))
 
-getContentFromSingleURL('https://cn.tripadvisor.com/Attractions-g60763-Activities-oa30-New_York_City_New_York.html#ATTRACTION_LIST')
+# getContentFromSingleURL('https://cn.tripadvisor.com/Attractions-g60763-Activities-oa30-New_York_City_New_York.html#ATTRACTION_LIST')
+testStrs = ['{}th page '.format(str(i)) for i in range(0, 1110, 30)]
+for str in testStrs:
+    print(str)
