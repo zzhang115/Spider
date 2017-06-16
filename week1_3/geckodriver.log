@@ -40,3 +40,16 @@ JavaScript error: http://suggestion.baidu.com/su?wd=seleni&json=1&p=3&sid=1468_2
 JavaScript error: http://suggestion.baidu.com/su?wd=seleniu&json=1&p=3&sid=1468_22533_21104_17001_22074&csor=7&pwd=seleni&cb=jQuery110209928219696353353_1497635566421&_=1497635566429, line 1: TypeError: jQuery110209928219696353353_1497635566421 is not a function
 JavaScript error: http://suggestion.baidu.com/su?wd=selenium&json=1&p=3&sid=1468_22533_21104_17001_22074&csor=8&pwd=seleniu&cb=jQuery110209928219696353353_1497635566421&_=1497635566430, line 1: TypeError: jQuery110209928219696353353_1497635566421 is not a function
 1497635584023	Marionette	INFO	New connections will no longer be accepted
+1497635977746	geckodriver	INFO	Listening on 127.0.0.1:46616
+1497635978860	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1497635982002	Marionette	INFO	Listening on port 33741
+1497635982116	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://suggestion.baidu.com/su?wd=s&json=1&p=3&sid=1434_21096_21670_22581&csor=1&cb=jQuery110209044943434930642_1497635983808&_=1497635983809, line 1: TypeError: jQuery110209044943434930642_1497635983808 is not a function
+JavaScript error: http://suggestion.baidu.com/su?wd=se&json=1&p=3&sid=1434_21096_21670_22581&csor=2&pwd=s&cb=jQuery110209044943434930642_1497635983808&_=1497635983810, line 1: TypeError: jQuery110209044943434930642_1497635983808 is not a function
+JavaScript error: http://suggestion.baidu.com/su?wd=sel&json=1&p=3&sid=1434_21096_21670_22581&csor=3&pwd=se&cb=jQuery110209044943434930642_1497635983808&_=1497635983811, line 1: TypeError: jQuery110209044943434930642_1497635983808 is not a function
+JavaScript error: http://suggestion.baidu.com/su?wd=sele&json=1&p=3&sid=1434_21096_21670_22581&csor=4&pwd=sel&cb=jQuery110209044943434930642_1497635983808&_=1497635983812, line 1: TypeError: jQuery110209044943434930642_1497635983808 is not a function
+JavaScript error: http://suggestion.baidu.com/su?wd=selen&json=1&p=3&sid=1434_21096_21670_22581&csor=5&pwd=sele&cb=jQuery110209044943434930642_1497635983808&_=1497635983813, line 1: TypeError: jQuery110209044943434930642_1497635983808 is not a function
+JavaScript error: http://suggestion.baidu.com/su?wd=seleni&json=1&p=3&sid=1434_21096_21670_22581&csor=6&pwd=selen&cb=jQuery110209044943434930642_1497635983808&_=1497635983814, line 1: TypeError: jQuery110209044943434930642_1497635983808 is not a function
+JavaScript error: http://suggestion.baidu.com/su?wd=seleniu&json=1&p=3&sid=1434_21096_21670_22581&csor=7&pwd=seleni&cb=jQuery110209044943434930642_1497635983808&_=1497635983815, line 1: TypeError: jQuery110209044943434930642_1497635983808 is not a function
+JavaScript error: http://suggestion.baidu.com/su?wd=selenium&json=1&p=3&sid=1434_21096_21670_22581&csor=8&pwd=seleniu&cb=jQuery110209044943434930642_1497635983808&_=1497635983816, line 1: TypeError: jQuery110209044943434930642_1497635983808 is not a function
+1497635989114	Marionette	INFO	Ceased listening
