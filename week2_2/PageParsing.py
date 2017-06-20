@@ -16,7 +16,6 @@ def getLinksFrom(channel, page, seller = 0):
         # print(url)
         webData = requests.get(url)
         soup = BeautifulSoup(webData.text, 'lxml')
-        # print(soup)
         isNoLongerExist = '404' in soup.find('link', type="text/css").get('href').split('/')[-1]
         if not isNoLongerExist:
             if soup.find('td', 't'):
