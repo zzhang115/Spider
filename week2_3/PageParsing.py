@@ -8,11 +8,24 @@ url_list = tongcheng['url_list']
 item_info = tongcheng['item_info']
 startUrl = 'http://sh.58.com/sale.shtml'
 i = 0
+
+# http://cn-proxy.com/
+# proxy_list = [
+#     'http://117.177.250.151:8081',
+#     'http://111.85.219.250:3129',
+#     'http://122.70.183.138:8118',
+#     ]
+# proxy_ip = random.choice(proxy_list) # 随机获取代理ip
+# proxies = {'http': proxy_ip}
+# we can generate random IP to get page to solve restriction problem
+
+# judge if page status is 404
+
 def getLinksFrom(channel, page, seller = 0):
     url= '{}pn{}/'.format(channel, str(page))
     # print(url)
     try:
-        webData = requests.get(url)
+        webData = requests.get(url) # if webData.status_code == 404
         soup = BeautifulSoup(webData.text, 'lxml')
         isNoLongerExist = '404' in soup.find('link', type="text/css").get('href').split('/')[-1]
         if not isNoLongerExist:
@@ -34,7 +47,7 @@ def getLinksFrom(channel, page, seller = 0):
     except :
         print(url, " ConnectionError!")
 
-def getItemInfo(url):
+def getItemInfo(url): # we can use len function to count how many items on current page
     try:
         webData = requests.get(url)
         soup = BeautifulSoup(webData.text, 'lxml')
