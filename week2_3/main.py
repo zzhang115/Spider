@@ -9,7 +9,8 @@ def getAllLinksFrom(channel):
 if __name__ == '__main__':
     pool = Pool(processes=8)# it can distribute resource depends on your PC automatically processor=4
     pool.map(getAllLinksFrom, channelList.split())
-
+    # print(channelList.split()) # channelList just a
+    # print(channelList)
 
 # function map: get element from right argument and pass it into double function one by one
 '''def double(x):
