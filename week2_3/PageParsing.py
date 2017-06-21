@@ -67,8 +67,7 @@ def getItemInfo(url): # we can use len function to count how many items on curre
 
 def displayItemInMongoDB():
     global i
-    for item in url_list.find().limit(300):
-    # for item in url_list.find():
+    for item in url_list.find():
         print(i,': ',item)
         i = i + 1
 # displayItemInMongoDB()
