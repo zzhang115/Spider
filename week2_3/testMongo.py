@@ -7,46 +7,40 @@ item_info = tongcheng['item_info']
 
 test = client['test']
 testlist = test['testlist']
-i = 0
-def displayItemInMongoDB():
-    # for item in url_list.find().limit(300):
-    global i
-    for item in url_list.find():
-        print(i,': ',item)
-        i = i + 1
-# displayItemInMongoDB()
 
+# newtongcheng = client['newtongcheng']
+# newUrlList = newtongcheng['url_list']
+# newItemInfo = newtongcheng['item_info']
+
+# i = 0
+# def displayItemInMongoDB():
+#     # for item in url_list.find().limit(300):
+#     global i
+#     for item in url_list.find():
+#         print(i,': ',item)
+#         i = i + 1
+# # displayItemInMongoDB()
+# urls0 = item_info.find().count()
+# print(urls0)
+# for url in urls:
+#     print(url)
 # def testListInMongoDB():
-# testlist.insert_one({'test' : "test1"})
-# testlist.insert_one({'test' : "test1"})
-# distinctCollection = testlist.distinct('test')
-# for item in testlist.distinct('test'):
-#     print(item)
 
-# print(testlist.count())
-# for item in testlist.find('test'):
-#     if item not in distinctCollection:
-#         print(item)
-# testlist.delete_many()
-
-cursor = test.coll.aggregate(
-    [
-        {"$group": {"_id": "$ID", "test": {"$addToSet": "$_id"}, "count": {"$sum": 1}}},
-        {"$match": {"count": { "$gte": 2 }}}
-    ]
-)
-
-response = []
-for doc in cursor:
-    print(doc)
-    del doc["test"][0]
-    for id in doc["test"]:
-        response.append(id)
-print(response)
-test.coll.remove({"_id": {"$in": response}})
-
-
-
+# testlist.insert_one({'title': 1, 'value' : 'a'})
+# testlist.insert_one({'title': 2, 'value' : 'a'})
+# testlist.insert_one({'title': 3, 'value' : 'a'})
+# testlist.insert_one({'title': 1, 'value' : 'a'})
+# infos = []
+# for item in item_info.find():
+#     info = {
+#         'title' : item['title'],
+#         'price' : item['price'],
+#         'seller' : item['seller'],
+#         'lookTime' : item['lookTime']
+#     }
+#     if info not in infos:
+#         infos.append(info)
+# print(len(infos))
 
 
 
