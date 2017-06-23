@@ -4,9 +4,10 @@ import os
 from string import punctuation
 
 client = pymongo.MongoClient('localhost', 27017)
-tongcheng = client['tongcheng']
-item_info = tongcheng['item_info']
-xlsx1 = 'california.xls'
+crime = client['crime']
+item_info = crime['crime_info']
+xlsx = ['california.xls', 'illinois.xls', 'new_york.xls', 'oregon.xls', 'tennessee.xls']
+
 # for i in item_info.find():#.limit(300):
 #     if i['price']:
 #         price = i['price']
@@ -27,32 +28,37 @@ xlsx1 = 'california.xls'
 # testlist = test['testlist']
 # for i in testlist.find():
 #     testlist.update({'_id' : i['_id']}, {'value' : 'b'})
-info = {
-    'city' : '',
-    'population' : '',
-    'violent crime' : '',
-    'murder' : '',
-    'rape revised' : '',
-    'rape legacy' : '',
-    'robbery' : '',
-    'aggravated assault' : '',
-    'property crime' : '',
-    'burglary' : '',
-    'larceny theft' : '',
-    'motor vehicle theft' : '',
-    'arson' : '',
-}
-def readDataFromXlrd():
-    wb = xlrd.open_workbook(os.path.join('california.xls'))
-    wb.sheet_names()
-    # print(wb.sheet_names())
-    sh = wb.sheet_by_name('13tbl8ca')
+data = []
+def readDataFromXlrd(xlr):
+    wb = xlrd.open_workbook(os.path.join(xlr))
+    sh = wb.sheet_by_name(wb.sheet_names()[0])
     row = 6
     col = 0
-    file = open('output.txt', 'w')
+    # file = open('output.txt', 'a')
     for row in range(6, sh.nrows - 2):
-        for col in range(sh.ncols):
-            data = sh.cell_value(row, col)
-            print(row, ' ', data)
+        # for col in range(sh.ncols):
+            # info.keys()
+        info = {
+            'city': sh.cell_value(row, 0),
+            'population': sh.cell_value(row, 1),
+            'violent crime': sh.cell_value(row, 2),
+            'murder': sh.cell_value(row, 3),
+            'rape revised': sh.cell_value(row, 4),
+            'rape legacy': sh.cell_value(row, 5),
+            'robbery': sh.cell_value(row, 6),
+            'aggravated assault': sh.cell_value(row, 7),
+            'property crime': sh.cell_value(row, 8),
+            'burglary': sh.cell_value(row, 9),
+            'larceny theft': sh.cell_value(row, 10),
+            'motor vehicle theft': sh.cell_value(row, 11),
+            'arson': sh.cell_value(row, 12),
+        }
+        # item_info.insert_one(info)
+        # data.append(info)
+        # file.write(xlr[0 : -4]+' '+str(info.items())+'\n')
+    # file.close()
 
-readDataFromXlrd()
+def washData():
+
+# for xlr in xlsx:
+#     readDataFromXlrd(xlr)
