@@ -24,10 +24,19 @@ xlsx = ['california.xls', 'illinois.xls', 'new_york.xls', 'oregon.xls', 'tenness
 #     else:
 #         area = 'Undefined'
 #     print(area)
-# test = client['test']
-# testlist = test['testlist']
-# for i in testlist.find():
-#     testlist.update({'_id' : i['_id']}, {'value' : 'b'})
+test = client['test']
+testlist = test['testlist']
+# testlist.insert_one({'title' : 'a', 'name' : 'abc', 'value' : 1})
+# testlist.insert_one({'title' : 'a', 'name' : 'eddf', 'value' : 2})
+# testlist.insert_one({'title' : 'a', 'name' : 'asfd', 'value' : 3})
+# testlist.insert_one({'title' : 'a', 'name' : 'wwqre', 'value' : 4})
+# testlist.insert_one({'title' : 'a', 'name' : 'qwer', 'value' : 5})
+# testlist.insert_one({'title' : 'a', 'name' : 'hfd', 'value' : 6})
+
+for i in testlist.find():
+    # testlist.update({'_id' : i['_id']}, {'title' : i['title'], 'name' : i['name'], 'value' : (int)(i['value']) + 10})
+    testlist.update({'_id' : i['_id']}, {'$set':{'value' : (int)(i['value']) + 10}})
+
 data = []
 def readDataFromXlrd(xlr):
     wb = xlrd.open_workbook(os.path.join(xlr))
@@ -59,6 +68,13 @@ def readDataFromXlrd(xlr):
     # file.close()
 
 def washData():
-
+    for item in item_info.find():#.limit(200):
+        if item['rape revised'] == '':
+            rapeRevised = 'None'
+        else:
+            rapeRevised = item['rape revised']
+        # item_info.update
+        print(rapeRevised)
 # for xlr in xlsx:
 #     readDataFromXlrd(xlr)
+# washData()
