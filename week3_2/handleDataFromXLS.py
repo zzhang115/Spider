@@ -33,9 +33,9 @@ testlist = test['testlist']
 # testlist.insert_one({'title' : 'a', 'name' : 'qwer', 'value' : 5})
 # testlist.insert_one({'title' : 'a', 'name' : 'hfd', 'value' : 6})
 
-for i in testlist.find():
+# for i in testlist.find():
     # testlist.update({'_id' : i['_id']}, {'title' : i['title'], 'name' : i['name'], 'value' : (int)(i['value']) + 10})
-    testlist.update({'_id' : i['_id']}, {'$set':{'value' : (int)(i['value']) + 10}})
+    # testlist.update({'_id' : i['_id']}, {'$set':{'value' : (int)(i['value']) + 10}})
 
 data = []
 def readDataFromXlrd(xlr):
@@ -73,8 +73,9 @@ def washData():
             rapeRevised = 'None'
         else:
             rapeRevised = item['rape revised']
-        # item_info.update
-        print(rapeRevised)
+        item_info.update({'_id' : item['_id']}, {'$set':{'rape revised' : rapeRevised}})
+
+def
 # for xlr in xlsx:
 #     readDataFromXlrd(xlr)
 # washData()
