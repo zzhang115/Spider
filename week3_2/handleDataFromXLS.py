@@ -1,26 +1,27 @@
 import xlrd
 import pymongo
 import os
+import charts
 from string import punctuation
 
 client = pymongo.MongoClient('localhost', 27017)
 crime = client['crime']
-item_info = crime['crime_info']
+crime_info = crime['crime_info']
 xlsx = ['california.xls', 'illinois.xls', 'new_york.xls', 'oregon.xls', 'tennessee.xls']
 
-# for i in item_info.find():#.limit(300):
+# for i in crime_info.find():#.limit(300):
 #     if i['price']:
 #         price = i['price']
 #         price = price[1 : len(price)]
 #         print(price)
-        # item_info.update({'_id' : i['_id']}, {'price' : price})
-# for i in item_info.find().limit(300):
+        # crime_info.update({'_id' : i['_id']}, {'price' : price})
+# for i in crime_info.find().limit(300):
 #     print(i)
 
 # here is a example to replace dirty data with punctuation, area here is a list
-# for i in item_info.find().limit(300):
+# for i in crime_info.find().limit(300):
 #     if i['area']:
-#         area = [i for i in i['area'] if i not in punctuation]
+#         area = [i for i in i['area'] if i not in punctuation] # for this case ['SF', '-', 'USF'], delete middle punctuation
 #     else:
 #         area = 'Undefined'
 #     print(area)
@@ -62,20 +63,23 @@ def readDataFromXlrd(xlr):
             'motor vehicle theft': sh.cell_value(row, 11),
             'arson': sh.cell_value(row, 12),
         }
-        # item_info.insert_one(info)
+        # crime_info.insert_one(info)
         # data.append(info)
-        # file.write(xlr[0 : -4]+' '+str(info.items())+'\n')
+        # file.write(xlr[0 : -4]+' '+str(info.crimes())+'\n')
     # file.close()
 
 def washData():
-    for item in item_info.find():#.limit(200):
-        if item['rape revised'] == '':
+    for crime in crime_info.find():#.limit(200):
+        if crime['rape revised'] == '':
             rapeRevised = 'None'
         else:
-            rapeRevised = item['rape revised']
-        item_info.update({'_id' : item['_id']}, {'$set':{'rape revised' : rapeRevised}})
+            rapeRevised = crime['rape revised']
+        crime_info.update({'_id' : crime['_id']}, {'$set':{'rape revised' : rapeRevised}})
 
-def
+def watchData():
+    for crime in crime_info.find():
+        print(crime)
 # for xlr in xlsx:
 #     readDataFromXlrd(xlr)
 # washData()
+# watchData()
