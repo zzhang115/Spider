@@ -51,6 +51,7 @@ def readDataFromXlrd(xlr):
         # for col in range(sh.ncols):
             # info.keys()
         info = {
+            'state' : xlr[0 : -4],
             'city': sh.cell_value(row, 0),
             'population': sh.cell_value(row, 1),
             'violent crime': sh.cell_value(row, 2),
@@ -65,7 +66,7 @@ def readDataFromXlrd(xlr):
             'motor vehicle theft': sh.cell_value(row, 11),
             'arson': sh.cell_value(row, 12),
         }
-        # crime_info.insert_one(info)
+        crime_info.insert_one(info)
         # data.append(info)
         # file.write(xlr[0 : -4]+' '+str(info.crimes())+'\n')
     # file.close()
@@ -82,19 +83,6 @@ def watchData():
     for crime in crime_info.find():
         print(crime)
 
-def drawChart():
-    t = np.arange(0.0, 2.0, 0.01)
-    s = 1 + np.sin(2*np.pi*t)
-    plt.plot(t, s)
-
-    plt.xlabel('time (s)')
-    plt.ylabel('voltage (mV)')
-    plt.title('About as simple as it gets, folks')
-    plt.grid(True)
-    plt.savefig("test.png")
-    plt.show()
-
-drawChart()
 # for xlr in xlsx:
 #     readDataFromXlrd(xlr)
 # washData()
