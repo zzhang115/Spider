@@ -13,6 +13,6 @@ list = [
         {'robbery': 352.0, 'city': 'Antioch'}
         ]
 
-newList = sorted(list, key = itemgetter('robbery'), reverse = True)
-for i in newList:
+list = sorted(list, key = itemgetter('robbery'), reverse = True)
+for i in list:
     print(i)
