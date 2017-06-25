@@ -72,12 +72,16 @@ def readDataFromXlrd(xlr):
     # file.close()
 
 def washData():
+    # for crime in crime_info.find():#.limit(200):
+    #     if crime['rape revised'] == '':
+    #         rapeRevised = 'None'
+    #     else:
+    #         rapeRevised = crime['rape revised']
+    #     crime_info.update({'_id' : crime['_id']}, {'$set':{'rape revised' : rapeRevised}})
     for crime in crime_info.find():#.limit(200):
-        if crime['rape revised'] == '':
-            rapeRevised = 'None'
-        else:
-            rapeRevised = crime['rape revised']
-        crime_info.update({'_id' : crime['_id']}, {'$set':{'rape revised' : rapeRevised}})
+        if not crime['population']:
+            crime_info.remove(({'_id': crime['_id']}))
+            print(crime['state'])
 
 def watchData():
     for crime in crime_info.find():
@@ -85,5 +89,5 @@ def watchData():
 
 # for xlr in xlsx:
 #     readDataFromXlrd(xlr)
-# washData()
+washData()
 # watchData()
